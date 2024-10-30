@@ -15,18 +15,12 @@ const { type } = require('os');
 
 
 const app = express();
-app.use(cors({
-    origin: ['https://gajma-ocr.vercel.app', 'http://localhost:5000'],
-    methods: ['GET','HEAD', 'PUT' , 'PATCH', 'POST' , 'DELETE'],
-    credentials: true 
-}));
+app.use(cors());
 app.use(express.json());
 
 const upload = multer({dest: 'uploads/'});
 
-const openai  = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
-});
+const openai  = new OpenAI();
 
 async function createAssistant(imagePath) {
 
@@ -160,9 +154,7 @@ app.post('/extract', upload.single('file'), async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
+app.listen(5000, () => {
   console.log('Server running on http://localhost:5000');
   
 });
