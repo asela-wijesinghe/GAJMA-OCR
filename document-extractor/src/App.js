@@ -36,11 +36,20 @@ function DocumentExtractor() {
     const formData = new FormData();
     formData.append('file', file);
 
-    try {
-      const response = await fetch('http://localhost:5000/api/extract', {
-        method: 'POST',
-        body: formData,
-      });
+
+
+   // Determine the API endpoint based on the environment
+  //const apiUrl = process.env.NODE_ENV === 'development'
+  //? 'http://localhost:5000/api/extract' // Localhost URL
+  //: 'https://gajma-ocr-bzyn.vercel.app/api/extract'; // Replace with your actual Vercel URL
+
+  const apiUrl = 'https://gajma-ocr-bzyn.vercel.app/api/extract';
+
+try {
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    body: formData,
+  });
 
       if (!response.ok) throw new Error("Extraction failed");
 
@@ -48,7 +57,7 @@ function DocumentExtractor() {
       console.log(result)
 
       if(result.imagePreviewUrl){
-        setImagePreview(`http://localhost:5000/${result.imagePreviewUrl}`);
+        setImagePreview(`${apiUrl}/${result.imagePreviewUrl}`);
       }
 
       setDataFields({
