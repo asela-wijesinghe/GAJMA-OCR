@@ -54,9 +54,9 @@ function DocumentExtractor() {
 
     const formData = new FormData();
     formData.append('file', file);
-
+    const baseUrl = require('./baseUrl');
     try {
-      const response = await fetch('http://localhost:5000/api/extract', {
+      const response = await fetch(`${baseUrl}/api/extract`, {
         method: 'POST',
         body: formData,
       });
@@ -67,7 +67,7 @@ function DocumentExtractor() {
       console.log(result)
 
       if(result.imagePreviewUrl){
-        setImagePreview(`http://localhost:5000/${result.imagePreviewUrl}`);
+        setImagePreview(`${baseUrl}/${result.imagePreviewUrl}`);
       }
 
       setDataFields({

@@ -1,3 +1,4 @@
-const baseUrl = "https://mern-azure-app-emddb2h2abc5h2dt.eastus2-01.azurewebsites.net"
+// const baseUrl = "http://localhost:5000"
+const baseUrl = "http://localhost:5000"
 
 export default baseUrl
