@@ -16,7 +16,7 @@ const { type } = require('os');
 
 const app = express();
 app.use(cors({
-    origin: ['https://open-ai-qtd.vercel.app', 'http://localhost:5000'],
+    origin: ['https://gajma-ocr.vercel.app', 'http://localhost:5000'],
     methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
     credentials: true 
 }));
