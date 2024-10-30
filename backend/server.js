@@ -15,13 +15,15 @@ const { type } = require('os');
 
 
 const app = express();
-app.use(cors());
+
+
+
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://gajma-ocr.vercel.app',  // Allow your frontend's origin
-    methods: 'POST',  // Explicitly allow POST requests
-    allowedHeaders: ['Content-Type'],  // Allow specific headers if needed
+    origin: ['https://gajma-ocr.vercel.app', 'http://localhost:3000'],// Allow only your frontend to access the API
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true // Allow credentials (if needed)
 }));
 
 
@@ -130,6 +132,7 @@ async function convertPdfToImage(filePath) {
 }
 
 app.post('/api/extract', upload.single('file'), async (req, res) => {
+
     if (!req.file) {
         return res.status(400).send('No file uploaded.');
     }
