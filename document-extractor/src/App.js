@@ -121,7 +121,7 @@ function DocumentExtractor() {
       
       <div className="d-flex align-items-center justify-content-between mt-3">
         <div className="d-flex flex-column align-items-center">
-          <div className="border rounded p-3" style={{ width: '300px', height: '400px', backgroundColor: '#e8eff5' }}>
+          <div className="border rounded p-3" style={{ width: '500px', height: '800px', backgroundColor: '#e8eff5' }}>
             {imagePreview ? (
               <img src={imagePreview} alt="Document preview" className="w-100 h-100" style={{ objectFit: 'cover', borderRadius: '10px' }} />
             ) : (
@@ -130,7 +130,7 @@ function DocumentExtractor() {
           </div>
         </div>
 
-        <div className="ms-4" style={{ width: '350px' }}>
+        <div className="ms-4" style={{ width: '850px' }}>
           <h5 style={{ color: '#334e68' }}>Upload Document</h5>
           <div className="input-group mb-3">
             <input type="file" className="form-control" onChange={handleFileChange} style={{ borderColor: '#c0d6e4' }} />
@@ -241,7 +241,7 @@ function DocumentExtractor() {
 
       <div className="mt-5">
         <h5 style={{ color: '#334e68' }}>JSON Extraction</h5>
-        <div className="border rounded p-3" style={{ backgroundColor: '#2d3748', color: '#e2e8f0', height: '200px', overflowY: 'auto' }}>
+        <div className="border rounded p-3" style={{ backgroundColor: '#2d3748', color: '#e2e8f0', height: '500px', overflowY: 'auto' }}>
           <pre>{jsonOutput ? JSON.stringify(jsonOutput, null, 2) : "No JSON data available"}</pre>
         </div>
       </div>
