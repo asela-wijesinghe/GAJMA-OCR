@@ -1,16 +1,35 @@
 // DocumentExtractor.js
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from './images/logo.jpg'
 
 function DocumentExtractor() {
   const [file, setFile] = useState(null);
   const [dataFields, setDataFields] = useState({
-    invoiceNo: '',
-    date: '',
-    billTo: '',
-    total: '',
-    bankAccount: '',
-    bankName: ''
+    invDate: '',
+    invNo: '',
+    customerName: '',
+    invoiceCategory: '',
+    invValue: '',
+    partPayment: '',
+    paymentDate: '',
+    pendingValue: '',
+    creditLimit: '',
+    creditDays: '',
+    billDueDate: '',
+    dueDays: '',
+    exceededDays: '',
+    status: '',
+    range_0_30: '',
+    range_31_45: '',
+    range_46_60: '',
+    range_61_90: '',
+    range_90plus: '',
+    pdCheque: '',
+    pdcDate: '',
+    finalAmount: '',
+    prNo: '',
+    remarks: '',
   });
 
   const [extraData, setExtraData] = useState([]);
@@ -52,12 +71,30 @@ function DocumentExtractor() {
       }
 
       setDataFields({
-        invoiceNo: result.templateData?.invoiceNo || '',
-        date: result.templateData?.date || '',
-        billTo: result.templateData?.billTo || '',
-        total: result.templateData?.total || '',
-        bankAccount: result.templateData?.bankAccount || '',
-        bankName: result.templateData?.bankName || '',
+        invDate: result.templateData?.invDate || '',
+        invNo: result.templateData?.invNo || '',
+        customerName: result.templateData?.customerName || '',
+        invoiceCategory: result.templateData?.invoiceCategory || '',
+        invValue: result.templateData?.invValue || '',
+        partPayment: result.templateData?.partPayment || '',
+        paymentDate: result.templateData?.paymentDate || '',
+        pendingValue: result.templateData?.pendingValue || '',
+        creditLimit: result.templateData?.creditLimit || '',
+        creditDays: result.templateData?.creditDays || '',
+        billDueDate: result.templateData?.billDueDate || '',
+        dueDays: result.templateData?.dueDays || '',
+        exceededDays: result.templateData?.exceededDays || '',
+        status: result.templateData?.status || '',
+        range_0_30: result.templateData?.range_0_30 || '',
+        range_31_45: result.templateData?.range_31_45 || '',
+        range_46_60: result.templateData?.range_46_60 || '',
+        range_61_90: result.templateData?.range_61_90 || '',
+        range_90plus: result.templateData?.range_90plus || '',
+        pdCheque: result.templateData?.pdCheque || '',
+        pdcDate: result.templateData?.pdcDate || '',
+        finalAmount: result.templateData?.finalAmount || '',
+        prNo: result.templateData?.prNo || '',
+        remarks: result.templateData?.remarks || '',
       }); 
 
       //Set additional data
@@ -76,7 +113,11 @@ function DocumentExtractor() {
 
   return (
     <div className="container mt-4" style={{ backgroundColor: '#f5f7fa', minHeight: '100vh', padding: '20px', borderRadius: '10px' }}>
-      <h4 className="text-center" style={{ color: '#334e68', fontWeight: 'bold', marginBottom: '20px' }}>Gajma Document Extractor</h4>
+
+      {/* logo here */}
+      <div className="text-center mb-4">
+        <img src={logo} alt="Company Logo" style={{ width: '150px', height: 'auto' }} />
+      </div>
       
       <div className="d-flex align-items-center justify-content-between mt-3">
         <div className="d-flex flex-column align-items-center">
@@ -102,28 +143,96 @@ function DocumentExtractor() {
           <div className="row g-2">
             <div className="col-6">
               <label htmlFor="invoiceNo" className="form-label" style={{ color: '#334e68' }}>Invoice No</label>
-              <input type="text" id="invoiceNo" className="form-control" value={dataFields.invoiceNo || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+              <input type="text" id="invoiceNo" className="form-control" value={dataFields.invNo || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
             </div>
             <div className="col-6">
-              <label htmlFor="date" className="form-label" style={{ color: '#334e68' }}>Date</label>
-              <input type="text" id="date" className="form-control" value={dataFields.date || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+              <label htmlFor="invDate" className="form-label" style={{ color: '#334e68' }}>Date</label>
+              <input type="text" id="invDate" className="form-control" value={dataFields.invDate || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
             </div>
             <div className="col-6">
-              <label htmlFor="billTo" className="form-label" style={{ color: '#334e68' }}>Bill To</label>
-              <input type="text" id="billTo" className="form-control" value={dataFields.billTo || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+              <label htmlFor="customerName" className="form-label" style={{ color: '#334e68' }}>Customer Name</label>
+              <input type="text" id="customerName" className="form-control" value={dataFields.customerName || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
             </div>
             <div className="col-6">
-              <label htmlFor="total" className="form-label" style={{ color: '#334e68' }}>Total</label>
-              <input type="text" id="total" className="form-control" value={dataFields.total || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+              <label htmlFor="invValue" className="form-label" style={{ color: '#334e68' }}>Total Value</label>
+              <input type="text" id="invValue" className="form-control" value={dataFields.invValue || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
             </div>
             <div className="col-6">
-              <label htmlFor="bankAccount" className="form-label" style={{ color: '#334e68' }}>Account Number</label>
-              <input type="text" id="bankAccount" className="form-control" value={dataFields.bankAccount || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+              <label htmlFor="partPayment" className="form-label" style={{ color: '#334e68' }}>Part Payment</label>
+              <input type="text" id="partPayment" className="form-control" value={dataFields.partPayment || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
             </div>
             <div className="col-6">
-              <label htmlFor="bankName" className="form-label" style={{ color: '#334e68' }}>Bank Name</label>
-              <input type="text" id="bankName" className="form-control" value={dataFields.bankName || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+              <label htmlFor="paymentDate" className="form-label" style={{ color: '#334e68' }}>Payment Date</label>
+              <input type="text" id="paymentDate" className="form-control" value={dataFields.paymentDate || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
             </div>
+            <div className="col-6">
+            <label htmlFor="pendingValue" className="form-label" style={{ color: '#334e68' }}>Pending Value</label>
+            <input type="text" id="pendingValue" className="form-control" value={dataFields.pendingValue || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="creditLimit" className="form-label" style={{ color: '#334e68' }}>Credit Limit</label>
+            <input type="text" id="creditLimit" className="form-control" value={dataFields.creditLimit || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="creditDays" className="form-label" style={{ color: '#334e68' }}>Credit Days</label>
+            <input type="text" id="creditDays" className="form-control" value={dataFields.creditDays || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="billDueDate" className="form-label" style={{ color: '#334e68' }}>Bill Due Date</label>
+            <input type="text" id="billDueDate" className="form-control" value={dataFields.billDueDate || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="dueDays" className="form-label" style={{ color: '#334e68' }}>Due Days</label>
+            <input type="text" id="dueDays" className="form-control" value={dataFields.dueDays || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="exceededDays" className="form-label" style={{ color: '#334e68' }}>Exceeded Days</label>
+            <input type="text" id="exceededDays" className="form-control" value={dataFields.exceededDays || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="status" className="form-label" style={{ color: '#334e68' }}>Status</label>
+            <input type="text" id="status" className="form-control" value={dataFields.status || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="range_0_30" className="form-label" style={{ color: '#334e68' }}>Range 0-30 Days</label>
+            <input type="text" id="range_0_30" className="form-control" value={dataFields.range_0_30 || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="range_31_45" className="form-label" style={{ color: '#334e68' }}>Range 31-45 Days</label>
+            <input type="text" id="range_31_45" className="form-control" value={dataFields.range_31_45 || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="range_46_60" className="form-label" style={{ color: '#334e68' }}>Range 46-60 Days</label>
+            <input type="text" id="range_46_60" className="form-control" value={dataFields.range_46_60 || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="range_61_90" className="form-label" style={{ color: '#334e68' }}>Range 61-90 Days</label>
+            <input type="text" id="range_61_90" className="form-control" value={dataFields.range_61_90 || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="range_90plus" className="form-label" style={{ color: '#334e68' }}>Range 90+ Days</label>
+            <input type="text" id="range_90plus" className="form-control" value={dataFields.range_90plus || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="pdCheque" className="form-label" style={{ color: '#334e68' }}>PD Cheque</label>
+            <input type="text" id="pdCheque" className="form-control" value={dataFields.pdCheque || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="pdcDate" className="form-label" style={{ color: '#334e68' }}>PDC Date</label>
+            <input type="text" id="pdcDate" className="form-control" value={dataFields.pdcDate || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="finalAmount" className="form-label" style={{ color: '#334e68' }}>Final Amount</label>
+            <input type="text" id="finalAmount" className="form-control" value={dataFields.finalAmount || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-6">
+            <label htmlFor="prNo" className="form-label" style={{ color: '#334e68' }}>PR No</label>
+            <input type="text" id="prNo" className="form-control" value={dataFields.prNo || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
+          <div className="col-12">
+            <label htmlFor="remarks" className="form-label" style={{ color: '#334e68' }}>Remarks</label>
+            <textarea id="remarks" className="form-control" value={dataFields.remarks || ''} readOnly style={{ borderColor: '#c0d6e4' }} />
+          </div>
           </div>
         </div>
       </div>

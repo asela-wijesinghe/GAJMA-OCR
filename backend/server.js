@@ -55,14 +55,30 @@ async function createAssistant(imagePath) {
         Extract all possible data from the invoice image and structure it in the following JSON format:
         {
           "templateData": {
-            "name": "<licensee_name>",
-            "invoiceNo": "<invoice_number>",
-            "date": "<date>",
-            "dueDate": "<due_date>",
-            "billTo": "<bill_to>",
-            "total": "<total>",
-            "bankAccount": "<bank_account>",
-            "bankName": "<bank_name>"
+            "invDate": "<inv_date>",
+            "invNo": "<invoice_number>",
+            "customerName": "<customer_name>",
+            "invoiceCategory": "<invoice_category>",
+            "invValue": "<invoice_value>",
+            "partPayment": "<part_payment>",
+            "paymentDate": "<payment_date>",
+            "pendingValue": "<pending_value>",
+            "creditLimit": "<credit_limit>",
+            "creditDays": "<credit_days>",
+            "billDueDate": "<bill_due_date>",
+            "dueDays": "<due_days>",
+            "exceededDays": "<exceeded_days>",
+            "status": "<status>",
+            "range_0_30": "<range_0_30>",
+            "range_31_45": "<range_31_45>",
+            "range_46_60": "<range_46_60>",
+            "range_61_90": "<range_61_90>",
+            "range_90plus": "<range_90plus>",
+            "pdCheque": "<pd_cheque>",
+            "pdcDate": "<pdc_date>",
+            "finalAmount": "<final_amount>",
+            "prNo": "<pr_number>",
+            "remarks": "<remarks>"
           },
           "allData": [
             // Include all data extracted from the invoice here in JSON format

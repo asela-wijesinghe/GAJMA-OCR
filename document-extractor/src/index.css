@@ -18,9 +18,9 @@ body {
       rgb(216, 204, 221) 40%,
       rgba(255, 255, 255, 0) 81%
     ),
-    url("../images/background.jpg");
-  background-blend-mode: normal;
-  background-size: cover;
+    url("./images/gajma.jpg");
+    background-blend-mode: normal;
+    background-size: cover;
 }
 
 code {
