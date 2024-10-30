@@ -121,7 +121,7 @@ function DocumentExtractor() {
       
       <div className="d-flex align-items-center justify-content-between mt-3">
         <div className="d-flex flex-column align-items-center">
-          <div className="border rounded p-3" style={{ width: '500px', height: '500px', backgroundColor: '#e8eff5' }}>
+          <div className="border rounded p-3" style={{ width: '500px', height: '700px', backgroundColor: '#e8eff5' }}>
             {imagePreview ? (
               <img src={imagePreview} alt="Document preview" className="w-100 h-100" style={{ objectFit: 'cover', borderRadius: '10px' }} />
             ) : (
