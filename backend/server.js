@@ -166,6 +166,12 @@ app.post('/api/extract', upload.single('file'), async (req, res) => {
     }
 });
 
+//Production Script
+app.use(express.static("../document-extractor/build"));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "document-extractor", "build", "index.html"))
+})
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   
