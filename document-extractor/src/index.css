@@ -12,12 +12,8 @@ body {
   justify-content: center;
    /* Full viewport height */
   display: flex;
-  background: rgba(254, 254, 254, 0.766);
-  background: linear-gradient(
-      180deg,
-      rgb(216, 204, 221) 40%,
-      rgba(255, 255, 255, 0) 81%
-    ),
+  
+  background: 
     url("./images/gajma.jpg");
     background-blend-mode: normal;
     background-size: cover;
