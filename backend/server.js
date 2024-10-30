@@ -18,6 +18,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(cors({
+    origin: 'https://gajma-ocr.vercel.app',  // Allow your frontend's origin
+    methods: 'POST',  // Explicitly allow POST requests
+    allowedHeaders: ['Content-Type'],  // Allow specific headers if needed
+}));
+
+
 const PORT = process.env.PORT || 5000;
 
 const upload = multer({dest: 'uploads/'});
