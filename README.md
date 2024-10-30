@@ -1,0 +1,2 @@
+# GAJMA OCR
+ 
