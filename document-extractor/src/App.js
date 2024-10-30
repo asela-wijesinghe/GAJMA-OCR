@@ -1,7 +1,7 @@
 // DocumentExtractor.js
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './images/logo.jpg'
+import logo from './images/logo.png'
 
 function DocumentExtractor() {
   const [file, setFile] = useState(null);
@@ -116,7 +116,7 @@ function DocumentExtractor() {
 
       {/* logo here */}
       <div className="text-center mb-4">
-        <img src={logo} alt="Company Logo" style={{ width: '150px', height: 'auto' }} />
+        <img src={logo} alt="Company Logo" style={{ width: '350px', height: 'auto' }} />
       </div>
       
       <div className="d-flex align-items-center justify-content-between mt-3">
