@@ -13,12 +13,12 @@ body {
    /* Full viewport height */
   display: flex;
   background: rgba(254, 254, 254, 0.766);
-  background: linear-gradient(
+  /* background: linear-gradient(
       180deg,
       rgb(216, 204, 221) 40%,
       rgba(255, 255, 255, 0) 81%
     ),
-    url("../images/background.jpg");
+    url("../images/background.jpg"); */
   background-blend-mode: normal;
   background-size: cover;
 }
