@@ -24,9 +24,7 @@ app.use(express.json());
 
 const upload = multer({dest: 'uploads/'});
 
-const openai  = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
+const openai  = new OpenAI();
 
 async function createAssistant(imagePath) {
 
