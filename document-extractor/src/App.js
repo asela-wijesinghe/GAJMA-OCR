@@ -37,7 +37,7 @@ function DocumentExtractor() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:5000/extract', {
+      const response = await fetch('https://gajma-ocr-bzyn.vercel.app/api/extract', {
         method: 'POST',
         body: formData,
       });
