@@ -15,7 +15,11 @@ const { type } = require('os');
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ['https://open-ai-qtd.vercel.app', 'http://localhost:5000'],
+    methods: ['GET,HEAD,PUT,PATCH,POST,DELETE'],
+    credentials: true 
+}));
 app.use(express.json());
 
 const upload = multer({dest: 'uploads/'});
