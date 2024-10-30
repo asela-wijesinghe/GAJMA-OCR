@@ -5,9 +5,41 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  align-items: center;
+  justify-content: center;
+   /* Full viewport height */
+  display: flex;
+  background: rgba(254, 254, 254, 0.766);
+  background: linear-gradient(
+      180deg,
+      rgb(216, 204, 221) 40%,
+      rgba(255, 255, 255, 0) 81%
+    ),
+    url("../images/background.jpg");
+  background-blend-mode: normal;
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btn-primary {
+  background-color: #5271ff; /* Default background color */
+  border-color: #5271ff; /* Default border color */
+  color: #fff; /* Text color */
+  font-weight: bold; /* Bold text */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+}
+
+.btn-primary:hover {
+  background-color: #4b63e3; /* Hover background color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
