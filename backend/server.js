@@ -122,7 +122,7 @@ async function convertPdfToImage(filePath) {
     }
 }
 
-app.post('/extract', upload.single('file'), async (req, res) => {
+app.post('/api/extract', upload.single('file'), async (req, res) => {
     if (!req.file) {
         return res.status(400).send('No file uploaded.');
     }
