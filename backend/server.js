@@ -16,16 +16,19 @@ const { type } = require('os');
 
 const app = express();
 
-app.use(cors());
 
 
 app.use(express.json());
 
-//app.use(cors({
-  //  origin: ['https://gajma-ocr.vercel.app', 'http://localhost:3000'],// Allow only your frontend to access the API
-    //methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    //credentials: true // Allow credentials (if needed)
-//}));
+app.use(cors({
+    origin: ['https://gajma-ocr.vercel.app', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    credentials: true,
+}), (req, res, next) => {
+    console.log('CORS Middleware Triggered:', req.method, req.url);
+    next();
+});
+
 
 
 const PORT = process.env.PORT || 5000;
