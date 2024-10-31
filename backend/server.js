@@ -27,11 +27,11 @@ const PORT = process.env.PORT || 5000;
 
 const upload = multer({dest: 'uploads/'});
 
-const openai  = new OpenAI(
-    {
-        apiKey: process.env.OPENAI_API_KEY,
-    }
-);
+// const openai  = new OpenAI(
+//     {
+//         apiKey: process.env.OPENAI_API_KEY,
+//     }
+// );
 
 // async function createAssistant(imagePath) {
 
