@@ -8,15 +8,11 @@ const FormData = require('form-data');
 const path = require('path');
 const pdfParse = require('pdf-parse')
 const pdf = require('pdf-poppler');
-
 const OpenAI = require('openai');
 const { type } = require('os');
 
 
-
 const app = express();
-
-
 
 app.use(express.json());
 
@@ -185,8 +181,8 @@ app.post('/api/extract', upload.single('file'), async (req, res) => {
 app.get("/", (req, res) => res.send("Express on Vercel"));
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server running on http://localhost:${PORT}`);
+// });
 
 module.exports = app;
