@@ -54,7 +54,7 @@ function DocumentExtractor() {
 
     const formData = new FormData();
     formData.append('file', file);
-    const baseUrl = require('../baseUrl');
+    const baseUrl = require('./baseUrl');
     try {
       const response = await fetch(`${baseUrl}/api/extract`, {
         method: 'POST',
