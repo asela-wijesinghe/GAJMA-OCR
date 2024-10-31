@@ -181,7 +181,12 @@ app.post('/api/extract', upload.single('file'), async (req, res) => {
     }
 });
 
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
-  
 });
+
+module.exports = app;
