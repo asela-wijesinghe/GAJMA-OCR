@@ -187,7 +187,13 @@
 
 // module.exports = app;
 
+const express = require('express');
+const app = express();
 
-module.exports = (req, res) => {
-    res.status(200).send('Hello, Vercel!');
-  };
+// Define your API route
+app.get('/', (req, res) => {
+  res.send('Hello, Vercel with Express!');
+});
+
+// Export the app as a serverless function
+module.exports = app;
